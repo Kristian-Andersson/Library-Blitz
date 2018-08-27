@@ -37,11 +37,7 @@ class Library{
   }
 
 
-
 }
-$vara = new Library("Hej","Adam", 1891);
-echo "<br />Title: " . $vara->getTitle();
-echo "<br />Author: " . $vara->getAuthor();
-echo "<br />ReleaseYear: " . $vara->getreleaseYear();
+
 
 ?>

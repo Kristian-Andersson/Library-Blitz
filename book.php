@@ -1,3 +1,29 @@
+<?php
+
+session_start();
+
+
+include 'library.php';
+
+//$bokValues = $_POST['bookTitle']
+$booktitle = $_POST['bookTitle'];
+$bookAuthor = $_POST['bookAuthor'];
+$bookRelease = $_POST['bookRelease']; 
+$bok = new Library($booktitle, $bookAuthor, $bookRelease);
+echo "<br />Title: " . $bok->getTitle();
+echo "<br />Author: " . $bok->getAuthor();
+echo "<br />ReleaseYear: " . $bok->getreleaseYear();
+
+
+$_SESSION['library'][] = $bok;
+
+/*
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
+*/
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +35,7 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <form action="session.php" method="POST">
+    <form action="book.php" method="POST">
         <label for="bookTitle">Title:</label>
         <input type="text" name="bookTitle">
         <br>
